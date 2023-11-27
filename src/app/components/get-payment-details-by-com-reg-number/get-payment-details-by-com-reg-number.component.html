@@ -1,0 +1,43 @@
+<div class="main-content page-m">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="form-header">
+        <input #myInput type="text"
+               class="au-input au-input-xl" type="text" name="search"
+               placeholder="Add the Company Registration Number..."
+               (keyup.enter)="doSearch(myInput.value)"
+        />
+        <button (click)="doSearch(myInput.value)" class="au-btn-submit">
+          Search
+        </button>
+      </div>
+
+      <div *ngIf="showTable" id="payment-details-table">
+        <!-- Table to display payment details -->
+        <table>
+          <thead>
+          <tr>
+            <th>Invoice Number</th>
+            <th>Payee's NIC</th>
+            <th>Payee's Name</th>
+            <th>Period Code</th>
+            <th>Installment Number</th>
+            <th>Paid Amount</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- Iterate over the payment details and display each row -->
+          <tr *ngFor="let detail of paymentDetails">
+            <td>{{ detail.invoiceNumber }}</td>
+            <td>{{ detail.payeesNIC }}</td>
+            <td>{{ detail.payeesName }}</td>
+            <td>{{ detail.periodCode }}</td>
+            <td>{{ detail.installmentNumber }}</td>
+            <td>{{ detail.paidAmount }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

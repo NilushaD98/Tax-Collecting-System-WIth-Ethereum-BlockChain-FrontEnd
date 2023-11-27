@@ -1,0 +1,90 @@
+<div class="main-content page-m">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <form [formGroup]="personGroup" (ngSubmit)="onSubmit()" >
+<!--        person form group-->
+        <div formGroupName = "person" class="form-area">
+          <h3>Person Details</h3>
+          <div class="col-md-9">
+            <div class="input-space">
+              <input formControlName="nic" type="text" placeholder="NIC*">
+            </div>
+            <div class="input-space">
+              <input formControlName="nameWithInitials" type="text" placeholder="Name With Initials*">
+            </div>
+            <div class="input-space">
+              <input formControlName="fullName" type="text" placeholder="Full Name*">
+            </div>
+            <div class="input-space-spec">
+              <span><label>Date of Birth* : </label></span>
+              <input formControlName="birthDate" type="date" id ="datepicker" placeholder="Birth Date*">
+            </div>
+            <div class="input-space">
+              <input formControlName="country" type="text" placeholder="Country*">
+            </div>
+            <div class="input-space">
+              <input formControlName="gender" type="text" placeholder="Gender*">
+            </div>
+            <div class="input-space">
+              <input formControlName="race" type="text" placeholder="Race*">
+            </div>
+            <div class="input-space">
+              <input formControlName="jobTitle" type="text" placeholder="Job Title*">
+            </div>
+            <div class="input-space">
+              <input formControlName="nationality" type="text" placeholder="Nationality*">
+            </div>
+          </div>
+        </div>
+<!--        contactDetails form group-->
+        <div formGroupName = "contactDetails" class="form-area">
+          <h3>Contact Details</h3>
+          <div class="col-md-9">
+            <div class="input-space-spec">
+              <input formControlName="premisesNo" id="preno" type="text" placeholder="Premises No*">
+              <input formControlName="unitNo" id="unitno"  type="text" placeholder="Unit No*">
+            </div>
+            <div class="input-space">
+              <input formControlName="address" type="text" placeholder="Address*">
+            </div>
+            <div class="input-space-spec">
+              <input formControlName="postalCode" type="text" placeholder="Postal Code*">
+              <input formControlName="province" type="text" placeholder="Province*">
+              <input formControlName="district" type="text" placeholder="District*">
+            </div>
+            <div class="input-space-spec">
+              <input formControlName="divisionalSecretariat" type="text" placeholder="Divisional Secretariat*">
+              <input formControlName="gramaNiladhariDivision" type="text" placeholder="Grama Niladhari Division*">
+            </div>
+            <div class="input-space-spec">
+              <input formControlName="mobileContact" type="text" placeholder="Mobile Contact*">
+              <input formControlName="officeContact" type="text" placeholder="Office Contact*">
+            </div>
+            <div class="input-space-spec">
+              <input formControlName="homeContact" type="text" placeholder="Home Contact*">
+              <input formControlName="email" type="text" placeholder="E-mail*">
+            </div>
+            <div class="input-space">
+              <input formControlName="nameOfContactPerson" type="text" placeholder="Name Of Contact Person*">
+            </div>
+          </div>
+        </div>
+<!--        bankDetails-->
+        <div formGroupName = "bankDetails" class="form-area">
+          <h3>Bank Details</h3>
+          <div class="col-md-9">
+            <div class="input-space">
+              <input formControlName="bankName" type="text" placeholder="Bank Name*">
+            </div>
+            <div class="input-space">
+              <input formControlName="accountNumber" type="text" placeholder="Account Number*">
+            </div>
+          </div>
+        </div>
+        <div>
+          <button id="government-login" type="submit">Save Person</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

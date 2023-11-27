@@ -1,0 +1,57 @@
+export class RequestAddNewTaxpayerCompanyDTO {
+  constructor(
+    //company details
+    public  registrationNumber:string,
+    public  companyName:string,
+    public  comTypeID:number,
+    public  dateOfIncorporation:Date,
+    public  countryOfIncorporation:string,
+    public  principalActivityOfBusiness:string,
+    public  contact:string,
+    public  companyEmail:string,
+    public  websiteURL:string,
+    public  boiRegisterStatus:Boolean,
+    public  boiStartDate:Date,
+    public  boiExpiryDate:Date,
+    public  bankCode:string,
+    public  foreignCompanyDateOfIncorporation:string,
+    public  foreignCompanyCountryOfIncorporation:string,
+    public  foreignCompanyDateOfCommencement:Date,
+    //group company details
+    public  groupCompanyRegistrationNo:string,
+    public  nameOfParentCountry:string,
+    public  addressOfGroupCompany:string,
+    public  groupCompanyCountryOfIncorporation:string,
+    public  groupCompanyDateOfIncorporation:Date,
+    //contact details
+    public  premisesNo:number,
+    public  unitNo:number,
+    public  address:string,
+    public  postalCode:number,
+    public  province:string,
+    public  district:string,
+    public  divisionalSecretariat:string,
+    public  gramaNiladhariDivision:string,
+    public  mobileContact:string,
+    public  officeContact:string,
+    public  homeContact:string,
+    public  email:string,
+    public  nameOfContactPerson:string,
+    //director details
+    public  nicOrPassportNo:string,
+    public  issuanceCountryOfPassport:string,
+    public  fullName:string,
+    public  nameWithInitials:string,
+    public  dateOfBirth:Date,
+    public  directorAddress:string,
+    public  directorPostalCode:number,
+    public  contactMobile:string,
+    public  contactOffice:string,
+    public  contactHome:string,
+    public  directorEmail:string,
+    //bank details
+    public  bankName:string,
+    public  accountNumber:string,
+) {
+  }
+}

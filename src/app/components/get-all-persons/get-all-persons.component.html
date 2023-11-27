@@ -1,0 +1,26 @@
+<div class="main-content page-m">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="form-header">
+        <div id="payment-details-table">
+          <!-- Table to display payment details -->
+          <table>
+            <thead>
+            <tr>
+              <th>Person NIC</th>
+              <th>Name With Initials</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Iterate over the payment details and display each row -->
+            <tr *ngFor="let detail of personDetails">
+              <td>{{ detail.nic }}</td>
+              <td>{{ detail.nameWithInitials }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <!-- Add your navigation links here -->
+    <mat-nav-list>
+      <div>
+        <a class="new" mat-list-item routerLink="/addNewPerson">Add New Person</a>
+        <a class="new" mat-list-item routerLink="/addNewCompany">Add New Company</a>
+        <a class="new" mat-list-item routerLink="/addNewPersonPayment">Add Person Payment</a>
+        <a class="new" mat-list-item routerLink="/addNewCompanyPayment">Add Company Payment</a>
+        <a class="new" mat-list-item routerLink="/personPaymentDetails">Person Payment Details</a>
+        <a class="new" mat-list-item routerLink="/companyPaymentDetails">Company Payment Details</a>
+        <a class="new" mat-list-item routerLink="/getAllPersons">Get All Persons</a>
+        <a class="new" mat-list-item routerLink="/getAllCompanies">Get All Companies</a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Your main content goes here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,22 @@
+<div id="government-login" class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginGroup" (ngSubmit)="onSubmit()">
+    <div formGroupName="authdetails">
+      <div>
+        <input formControlName="username" type="text" id="username" name="username" placeholder="Username">
+      </div>
+      <div>
+        <input formControlName="password" type="password" id="password" name="text" placeholder="password">
+      </div>
+      <div>
+        <input formControlName="walletaddress" type="password" id="walletaddress" name="text" placeholder="wallet address">
+      </div>
+      <div>
+        <button type="submit">Login</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+

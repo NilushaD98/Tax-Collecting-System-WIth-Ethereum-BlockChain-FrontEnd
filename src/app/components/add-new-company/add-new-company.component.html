@@ -1,0 +1,194 @@
+<div class="main-content page-m" xmlns="http://www.w3.org/1999/html">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <form [formGroup]="companyGroup" (ngSubmit)="onSubmit()" >
+        <!--        company form group-->
+        <div formGroupName = "company" class="form-area">
+          <h3>Company Details</h3>
+          <div class="col-md-9">
+            <div class="input-space">
+              <input formControlName="registrationNumber" type="text" placeholder="Registration Number*">
+            </div>
+            <div class="input-space">
+              <input formControlName="companyName" type="text" placeholder="Company Name*">
+            </div>
+            <div class="input-space-spec">
+              <span><label >Company Type* : </label></span>
+              <select formControlName = "comTypeID" placeholder="comTypeID">
+                <option value="1">1- Private Limited (Reg. under 1982 Act )</option>
+                <option value="2">2- Private Limited (Reg. under 2007 Act) </option>
+                <option value="3">3- Foreign (Reg. under 1982 Act)</option>
+                <option value="4">4- Foreign (Reg. under 2007 Act)</option>
+                <option value="5">5- Limited</option>
+                <option value="6">6- Guarantee Limited</option>
+              </select>
+            </div>
+            <div class="input-space-spec">
+              <span><label for="datepicker">Date Of Incorporation* : </label></span>
+              <input formControlName="dateOfIncorporation" type="date" id ="datepicker" placeholder="dateOfIncorporation">
+            </div>
+            <div class="input-space">
+              <input formControlName="countryOfIncorporation" type="text" placeholder="Country Of Incorporation*">
+            </div>
+            <div class="input-space">
+              <input formControlName="principalActivityOfBusiness" type="text" placeholder="Principal Activity Of Business*">
+            </div>
+            <div class="input-space">
+              <input formControlName="contact" type="text" placeholder="Contact*">
+            </div>
+            <div class="input-space">
+              <input formControlName="companyEmail" type="text" placeholder="E-mail*">
+            </div>
+            <div class="input-space">
+              <input formControlName="websiteURL" type="text" placeholder="WEB*">
+            </div>
+            <div class="input-space-spec">
+              <span><label >BOI Register Status* : </label></span>
+              <select formControlName = "BOIRegisterStatus" placeholder="BOIRegisterStatus">
+                <option>True</option>
+                <option>False</option>
+              </select>
+            </div>
+            <div class="input-space-spec">
+              <span><label for="datepicker">BOI Start Date : </label></span>
+              <input formControlName="BOIStartDate" type="date" id ="datepicker"  placeholder="BOI Start Date">
+            </div>
+            <div class="input-space-spec">
+              <span><label for="datepicker">BOI Expiry Date : </label></span>
+              <input formControlName="BOIExpiryDate" type="date" id ="datepicker"  placeholder="BOI Expiry Date">
+            </div>
+            <div class="input-space">
+              <input formControlName="BankCode" type="text" placeholder="Bank Code">
+            </div>
+            <div class="input-space-spec">
+              <span><label for="datepicker">Foreign Company Date Of Incorporation* : </label></span>
+              <input formControlName="foreignCompanyDateOfIncorporation" type="date" id ="datepicker" placeholder="Foreign Company Date Of Incorporation">
+            </div>
+            <div class="input-space">
+              <input formControlName="foreignCompanyCountryOfIncorporation" type="text" placeholder="Foreign Company Country Of Incorporation">
+            </div>
+            <div class="input-space-spec">
+              <span><label for="datepicker">Foreign Company Date Of Commencement : </label></span>
+              <input formControlName="foreignCompanyDateOfCommencement" type="date" id ="datepicker" placeholder="Foreign Company Date Of Commencement">
+            </div>
+          </div>
+        </div>
+
+<!--        groupCompany form group-->
+        <div formGroupName = "groupCompany" class="form-area">
+          <h3>Group Company </h3>
+          <div class="col-md-9">
+            <div class="input-space">
+              <input formControlName="groupCompanyRegistrationNo" type="text" placeholder="Group Company Registration No">
+            </div>
+            <div class="input-space">
+              <input formControlName="nameOfParentCountry" type="text" placeholder="Name Of Parent Country">
+            </div>
+            <div class="input-space">
+              <input formControlName="addressOfGroupCompany" type="text" placeholder="Address Of Group Company">
+            </div>
+            <div class="input-space">
+              <input formControlName="groupCompanyCountryOfIncorporation" type="text" placeholder="Group Company Country Of Incorporation">
+            </div>
+            <div class="input-space-spec">
+              <span><label for="datepicker">Group Company Date Of Incorporation : </label></span>
+              <input formControlName="groupCompanyDateOfIncorporation" type="Date" id ="datepicker" placeholder="Group Company Date Of Incorporation">
+            </div>
+          </div>
+        </div>
+
+
+        <!--        contactDetails form group-->
+        <div formGroupName = "contactDetails" class="form-area">
+          <h3>Contact Details</h3>
+          <div class="col-md-9">
+            <div class="input-space-spec">
+              <input formControlName="premisesNo" id="preno" type="text" placeholder="Premises No*">
+              <input formControlName="unitNo" id="unitno"  type="text" placeholder="Unit No*">
+            </div>
+            <div class="input-space">
+              <input formControlName="address" type="text" placeholder="Address*">
+            </div>
+            <div class="input-space-spec">
+              <input formControlName="postalCode" type="text" placeholder="Postal Code*">
+              <input formControlName="province" type="text" placeholder="Province*">
+              <input formControlName="district" type="text" placeholder="District*">
+            </div>
+            <div class="input-space-spec">
+              <input formControlName="divisionalSecretariat" type="text" placeholder="Divisional Secretariat*">
+              <input formControlName="gramaNiladhariDivision" type="text" placeholder="Grama Niladhari Division*">
+            </div>
+            <div class="input-space-spec">
+              <input formControlName="mobileContact" type="text" placeholder="Mobile Contact*">
+              <input formControlName="officeContact" type="text" placeholder="Office Contact*">
+            </div>
+            <div class="input-space-spec">
+              <input formControlName="homeContact" type="text" placeholder="Home Contact*">
+              <input formControlName="email" type="text" placeholder="E-mail*">
+            </div>
+            <div class="input-space">
+              <input formControlName="nameOfContactPerson" type="text" placeholder="Name Of Contact Person*">
+            </div>
+          </div>
+        </div>
+
+        <!--        director form group-->
+        <div formGroupName = "director" class="form-area">
+          <h3>Director Details</h3>
+          <div class="col-md-9">
+            <div class="input-space">
+              <input formControlName="NICOrPassportNo" type="text" placeholder="NIC Or Passport No">
+            </div>
+            <div class="input-space">
+              <input formControlName="IssuanceCountryOfPassport" type="text" placeholder="Issuance Country Of Passport">
+            </div>
+            <div class="input-space">
+              <input formControlName="fullName" type="text" placeholder="Full Name">
+            </div>
+            <div class="input-space">
+              <input formControlName="nameWithInitials" type="text" placeholder="Name With Initials">
+            </div>
+            <div class="input-space-spec">
+              <span><label for="datepicker">Date of Birth : </label></span>
+              <input formControlName="dateOfBirth" type="date" id ="datepicker" placeholder="Birth Date">
+            </div>
+            <div class="input-space">
+              <input formControlName="directorAddress" type="text" placeholder="Address">
+            </div>
+            <div class="input-space">
+              <input formControlName="directorPostalCode" type="text" placeholder="Postal Code">
+            </div>
+            <div class="input-space">
+              <input formControlName="contactMobile" type="text" placeholder="Contact Mobile">
+            </div>
+            <div class="input-space">
+              <input formControlName="contactOffice" type="text" placeholder="Contact Office">
+            </div>
+            <div class="input-space">
+              <input formControlName="contactHome" type="text" placeholder="Contact Home">
+            </div>
+            <div class="input-space">
+              <input formControlName="directorEmail" type="text" placeholder="Director Email">
+            </div>
+          </div>
+        </div>
+
+        <!--        bankDetails-->
+        <div formGroupName = "bankDetails" class="form-area">
+          <h3>Bank Details</h3>
+          <div class="col-md-9">
+            <div class="input-space">
+              <input formControlName="bankName" type="text" placeholder="Bank Name">
+            </div>
+            <div class="input-space">
+              <input formControlName="accountNumber" type="text" placeholder="Account Number">
+            </div>
+          </div>
+        </div>
+        <div>
+          <button id="government-login" type="submit">Save Company</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
