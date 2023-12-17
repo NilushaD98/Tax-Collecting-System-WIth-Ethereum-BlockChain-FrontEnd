@@ -11,13 +11,14 @@
   justify-content: space-between; /* Align items at both ends */
   align-items: center;
 }
-
 .logo-container-1,logo-container-2 {
   display: flex;
   align-items: center;
   padding: 0 16px;
 }
-
+.nav-pills .nav-link {
+  color: black;
+}
 .logo-container-1 img {
   height: auto; /* Adjusting the height of the logo */
   width: 30%; /* Maintaining aspect ratio */
@@ -28,7 +29,14 @@
   width: 30%; /* Maintaining aspect ratio */
   margin-left: 140%; /* Increase space between logos */
 }
-
+.container{
+  background-color: white;
+}
+.container h1{
+  font-family:"Times New Roman";
+  margin-top:10px;
+  margin-right:600px
+}
 .spacer {
   flex: 1 1 auto;
 }

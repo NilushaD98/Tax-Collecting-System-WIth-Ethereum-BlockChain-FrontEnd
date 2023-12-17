@@ -3,8 +3,11 @@
     <div class="container-fluid">
       <div class="form-header">
         <div id="payment-details-table">
+          <div *ngIf="isLoading" class="loading-spinner">
+            <mat-spinner color="warn" mode="indeterminate"></mat-spinner>
+          </div>
           <!-- Table to display payment details -->
-          <table>
+          <table *ngIf="!isLoading">
             <thead>
             <tr>
               <th>Company Registration Number</th>

@@ -10,7 +10,7 @@ import {StandardResponse} from "../../common/standard-response";
 })
 export class GetAllCompaniesComponent implements OnInit{
   companyDetails: CompanyDetail[] = [];
-
+  isLoading: boolean = true;
   constructor(
     private taxPayerService:TaxpayerService
   ) {
@@ -20,6 +20,7 @@ export class GetAllCompaniesComponent implements OnInit{
       (response:StandardResponse) =>{
         if(response.code === 200){
           this.companyDetails = response.data as CompanyDetail[];
+          this.isLoading = false;
         }else{
           console.log("error")
         }

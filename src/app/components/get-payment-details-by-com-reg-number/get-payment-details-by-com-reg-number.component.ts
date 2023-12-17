@@ -13,14 +13,17 @@ export class GetPaymentDetailsByComRegNumberComponent {
 
   paymentDetails: CompanyPaymentDetail[] = [];
   showTable: boolean = false;
+  isLoading: boolean = false;
 
   constructor(private taxPayingService: TaxPayingService) {}
 
   doSearch(value: string) {
+    this.isLoading = true;
     this.taxPayingService.getPaymentDetailsByComRegNum(value).subscribe(
       (response: StandardResponse) => {
         if (response.code === 200) {
           this.paymentDetails = response.data as CompanyPaymentDetail[];
+          this.isLoading = false;
           this.showTable = true;
         }
       }

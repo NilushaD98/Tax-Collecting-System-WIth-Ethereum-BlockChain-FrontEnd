@@ -1,13 +1,14 @@
-
-<mat-toolbar color="primary">
-  <div class="logo-container-1">
-    <img src="assets/download.jpeg" alt="Department Logo">
-  </div>
-  <h1>IRD</h1>
-  <span class="spacer"></span>
-  <div class="logo-container-2">
-    <img src="assets/download%20(1).jpeg" alt="Government Logo">
-  </div>
-  <span class="spacer"></span>
-  <button (click)="logout()">-></button>
-</mat-toolbar>
+<div class="container">
+  <header id ="head" class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom fixed-top bg-white">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <div class="logo-container-1">
+          <img src="assets/download.jpeg" alt="Department Logo">
+        </div>
+    </a>
+    <h1><b>Island Revenue Department</b></h1>
+    <ul class="nav nav-pills">
+      <li *ngIf="isLogging" class="nav-item"><a routerLink="/home" class="nav-link">Home</a></li>
+      <li *ngIf="isLogging" class="nav-item"><b><a (click)="logout()" style="cursor: pointer; background-color: black; color:white" class="nav-link">Log Out</a></b></li>
+    </ul>
+  </header>
+</div>

@@ -4,7 +4,10 @@
       <div class="form-header">
         <div id="payment-details-table">
           <!-- Table to display payment details -->
-          <table>
+          <div *ngIf="isLoading" class="loading-spinner">
+            <mat-spinner color="warn" mode="indeterminate"></mat-spinner>
+          </div>
+          <table *ngIf="!isLoading">
             <thead>
             <tr>
               <th>Person NIC</th>

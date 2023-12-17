@@ -1,17 +1,17 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav mode="side" opened class="sidenav">
-    <!-- Add your navigation links here -->
     <mat-nav-list>
-      <div>
-        <a class="new" mat-list-item routerLink="/addNewPerson">Add New Person</a>
-        <a class="new" mat-list-item routerLink="/addNewCompany">Add New Company</a>
-        <a class="new" mat-list-item routerLink="/addNewPersonPayment">Add Person Payment</a>
-        <a class="new" mat-list-item routerLink="/addNewCompanyPayment">Add Company Payment</a>
-        <a class="new" mat-list-item routerLink="/personPaymentDetails">Person Payment Details</a>
-        <a class="new" mat-list-item routerLink="/companyPaymentDetails">Company Payment Details</a>
-        <a class="new" mat-list-item routerLink="/getAllPersons">Get All Persons</a>
-        <a class="new" mat-list-item routerLink="/getAllCompanies">Get All Companies</a>
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-white">
+        <a class="new" mat-list-item routerLink="/navigator/addNewPerson" routerLinkActive="active-link"><i class="bi bi-person-add mr-5 "></i>  Add New Person</a>
+        <a id = "newq" class="new" mat-list-item routerLink="/navigator/addNewCompany" routerLinkActive="active-link"><i class="bi bi-building-add"></i> Add New Company</a>
+        <a class="new" mat-list-item routerLink="/navigator/addNewPersonPayment" routerLinkActive="active-link"><i class="bi bi-piggy-bank"></i> Person Installment</a>
+        <a class="new" mat-list-item routerLink="/navigator/addNewCompanyPayment" routerLinkActive="active-link"><i class="bi bi-cash-stack"></i> Company Installment</a>
+        <a class="new" mat-list-item routerLink="/navigator/personPaymentDetails" routerLinkActive="active-link"><i class="bi bi-search"></i> (P)Installment Details</a>
+        <a class="new" mat-list-item routerLink="/navigator/companyPaymentDetails" routerLinkActive="active-link"><i class="bi bi-binoculars-fill"></i> (C)Installment Details</a>
+        <a class="new" mat-list-item routerLink="/navigator/getAllPersons" routerLinkActive="active-link"><i class="bi bi-person-vcard-fill"></i> All Person Taxpayers</a>
+        <a class="new" mat-list-item routerLink="/navigator/getAllCompanies" routerLinkActive="active-link"><i class="bi bi-grid-3x3-gap-fill"></i> All Company Taxpayers</a>
       </div>
+      <hr>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -20,3 +20,4 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+

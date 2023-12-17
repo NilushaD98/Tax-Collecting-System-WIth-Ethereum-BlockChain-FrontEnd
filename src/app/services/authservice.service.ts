@@ -28,10 +28,12 @@ export class AuthserviceService {
   }
 
   login() {
+    localStorage.setItem('isLoggedIn', 'true');
     this.loggedIn.next(true);
   }
 
   logout() {
+    localStorage.removeItem('isLoggedIn');
     this.cookieService.delete('access_token');
     this.loggedIn.next(false);
   }

@@ -3,6 +3,12 @@
  * Common CSS
  * ----------------------------
  */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  margin-top:50px;
+  height: 100vh; /* Adjust this value if needed to center vertically within the viewport */
+}
 
 *{
   margin:0;

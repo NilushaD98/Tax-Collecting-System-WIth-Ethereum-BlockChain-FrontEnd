@@ -12,6 +12,10 @@
         </button>
       </div>
 
+      <div *ngIf="isLoading" class="loading-spinner">
+        <mat-spinner color="warn" mode="indeterminate"></mat-spinner>
+      </div>
+
       <div *ngIf="showTable" id="payment-details-table">
         <!-- Table to display payment details -->
         <table>

@@ -13,6 +13,7 @@ import {RequestAddNewTaxpayerCompanyDTO} from "../../common/request-add-new-taxp
 export class AddNewCompanyComponent implements OnInit{
 
   companyGroup: FormGroup = new FormGroup({});
+  isLogging:boolean = false;
 
   constructor(
     private taxPayerService:TaxpayerService,
@@ -21,6 +22,9 @@ export class AddNewCompanyComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    if(localStorage.getItem('isLoggedIn')==='true'){
+      this.isLogging = true;
+    }
     const company = this.companyGroup.get('company') as FormGroup;
     this.companyGroup = this.formBuilder.group({
       company:this.formBuilder.group({

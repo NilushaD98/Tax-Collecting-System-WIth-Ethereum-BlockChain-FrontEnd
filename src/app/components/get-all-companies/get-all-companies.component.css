@@ -1114,32 +1114,38 @@ footer ul li{
     padding:8px 0
   }
 }
-/* Add these styles to your CSS file */
-
 #payment-details-table {
   width: 100%;
-  margin-top: 20px;
-  border-color: 2px solid white;
+  border: 2px solid white; /* Corrected property */
 }
 
 #payment-details-table table {
   width: 100%;
   border-collapse: collapse;
   border-radius: 15px;
-  margin-top: 15px;
-  border-color: 2px solid white;
+  border: 2px solid white; /* Corrected property */
 }
 
-#payment-details-table th, #payment-details-table td {
+#payment-details-table th,
+#payment-details-table td {
   padding: 10px;
   text-align: left;
   margin-left: 10px;
 }
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  height: 100vh; /* Adjust this value if needed to center vertically within the viewport */
+}
+
+
 
 #payment-details-table th {
+  position: sticky;
   background-color: #000000;
   color: white;
-  border-color: 2px solid white;
+  top: 0;
+  border: 2px solid white; /* Corrected property */
 }
 
 #payment-details-table td {
@@ -1155,3 +1161,4 @@ footer ul li{
   background-color: #d9d9d9;
   cursor: pointer;
 }
+

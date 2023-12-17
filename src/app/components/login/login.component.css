@@ -1,11 +1,14 @@
 #government-login {
   background-color: #ffffff;
-  border: 2px solid #000000;
-  padding: 10px;
   width: 300px;
   height: auto;
   margin: auto;
   margin-top: 100px;
+
+}
+#card1 {
+  border: 2px solid #000000;
+  padding: 10px;
   border-radius: 15px;
 }
 

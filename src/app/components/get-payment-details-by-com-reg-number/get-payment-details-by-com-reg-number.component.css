@@ -11,7 +11,12 @@
   -moz-box-sizing:border-box;
   box-sizing:border-box
 }
-
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  margin-top:50px;
+  height: 100vh; /* Adjust this value if needed to center vertically within the viewport */
+}
 body{
   font-family:Poppins,sans-serif;
   font-weight:400;

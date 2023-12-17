@@ -22,6 +22,9 @@ import { GetPaymentDetailsByComRegNumberComponent } from './components/get-payme
 import { GetAllCompaniesComponent } from './components/get-all-companies/get-all-companies.component';
 import { GetAllPersonsComponent } from './components/get-all-persons/get-all-persons.component';
 import {MatIconModule} from "@angular/material/icon";
+import { HomeComponent } from './components/home/home.component';
+import { AddnewComponent } from './components/addnew/addnew.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 const routes: Routes = [
@@ -32,7 +35,29 @@ const routes: Routes = [
   {path:'personPaymentDetails',component:GetPaymentDetailsByNICComponent},
   {path:'companyPaymentDetails',component:GetPaymentDetailsByComRegNumberComponent},
   {path:'getAllPersons',component:GetAllPersonsComponent},
-  {path:'getAllCompanies',component:GetAllCompaniesComponent}
+  {path:'getAllCompanies',component:GetAllCompaniesComponent},
+  {path:'addNew',component:AddnewComponent},
+  {path:'login',component:LoginComponent},
+  {path:'navbar',component:NavbarComponent},
+  {path:'home',component:HomeComponent},
+  {
+    path:'navigator',
+    component:SidenavComponent,
+    children:[
+      {path:'addNewPerson',component:AddNewPersonComponent},
+      {path:'addNewCompany',component:AddNewCompanyComponent},
+      {path:'addNewPersonPayment',component:AddNewPersonPaymentComponent},
+      {path:'addNewCompanyPayment',component:AddNewCompanyPaymentComponent},
+      {path:'personPaymentDetails',component:GetPaymentDetailsByNICComponent},
+      {path:'companyPaymentDetails',component:GetPaymentDetailsByComRegNumberComponent},
+      {path:'getAllPersons',component:GetAllPersonsComponent},
+      {path:'getAllCompanies',component:GetAllCompaniesComponent}
+    ]
+  },
+
+  {path:'',redirectTo:'/login',pathMatch:"full"}
+
+
 
 ];
 
@@ -50,6 +75,8 @@ const routes: Routes = [
     GetPaymentDetailsByComRegNumberComponent,
     GetAllCompaniesComponent,
     GetAllPersonsComponent,
+    HomeComponent,
+    AddnewComponent,
 
   ],
   imports: [
@@ -63,7 +90,8 @@ const routes: Routes = [
     MatSidenavModule,
     MatListModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

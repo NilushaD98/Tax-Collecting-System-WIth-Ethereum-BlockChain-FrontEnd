@@ -11,16 +11,19 @@ import {PersonPaymentDetail} from "../../common/person-payment-detail";
 export class GetPaymentDetailsByNICComponent {
   paymentDetails: PersonPaymentDetail[] = []; // Adjust the type based on your actual data structure
   showTable: boolean = false;
+  isLoading: boolean = false;
 
   constructor(private taxPayingService: TaxPayingService) {}
 
   doSearch(value: string) {
     console.log(value);
+    this.isLoading = true;
     this.taxPayingService.getPaymentDetailsByNIC(value).subscribe(
       (response: StandardResponse) => {
         if (response.code === 200) {
           console.log(response.data);
           this.paymentDetails = response.data as PersonPaymentDetail[];
+          this.isLoading = false;
           this.showTable = true;
         }
       }

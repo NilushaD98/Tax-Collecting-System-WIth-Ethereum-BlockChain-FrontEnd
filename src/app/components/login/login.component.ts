@@ -56,6 +56,9 @@ export class LoginComponent implements OnInit {
           this.tokens = response.data as Tokens;
           this.cookieService.set('access_token', this.tokens.access_token);
           this.authService.login();
+          this.route.navigate(['/navbar'])
+          this.route.navigate(['/home']).then(r => {
+          });
         }
       }
     );

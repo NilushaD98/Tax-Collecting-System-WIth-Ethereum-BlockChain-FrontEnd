@@ -1118,7 +1118,6 @@ footer ul li{
 
 #payment-details-table {
   width: 100%;
-  margin-top: 20px;
   border-color: 2px solid white;
 }
 
@@ -1126,7 +1125,6 @@ footer ul li{
   width: 100%;
   border-collapse: collapse;
   border-radius: 15px;
-  margin-top: 15px;
   border-color: 2px solid white;
 }
 
@@ -1154,5 +1152,11 @@ footer ul li{
 #payment-details-table tbody tr:hover {
   background-color: #d9d9d9;
   cursor: pointer;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  height: 100vh; /* Adjust this value if needed to center vertically within the viewport */
 }
 

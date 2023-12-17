@@ -12,6 +12,7 @@ import {data} from "autoprefixer";
 })
 export class GetAllPersonsComponent implements OnInit{
   personDetails: PersonDetail[] = [];
+  isLoading: boolean = true;
 
   constructor(
     private taxPayerService:TaxpayerService
@@ -25,6 +26,7 @@ export class GetAllPersonsComponent implements OnInit{
         }else{
           console.log("error")
         }
+        this.isLoading = false;
       }
     );
   }
