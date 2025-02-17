@@ -14,6 +14,7 @@ import {StandardResponse} from "../../common/standard-response";
   styleUrls: ['./add-new-person.component.css']
 })
 export class AddNewPersonComponent implements OnInit{
+  isLoading: boolean = false;
 
   personGroup:FormGroup = new FormGroup({})
   constructor(
@@ -59,6 +60,7 @@ export class AddNewPersonComponent implements OnInit{
   }
 
   onSubmit(){
+    this.isLoading = true;
     const person = this.personGroup.get('person') as FormGroup;
     const contactDetails  = this.personGroup.get('contactDetails') as FormGroup;
     const bankDetails = this.personGroup.get('bankDetails') as FormGroup;
@@ -92,7 +94,9 @@ export class AddNewPersonComponent implements OnInit{
 
     this.taxPayerService.addNewTaxPayerPerson(requestAddNewTaxpayerPersonDTO).subscribe(
       (response:StandardResponse)=>{
+
         if(response.code === 201){
+          this.isLoading = false;
           alert(`person saved : ${response.data}`);
           this.personGroup.reset();
         }else {

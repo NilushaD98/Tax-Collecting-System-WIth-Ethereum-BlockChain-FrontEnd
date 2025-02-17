@@ -82,6 +82,9 @@
           </div>
         </div>
         <div>
+          <div *ngIf="isLoading" class="loading-spinner">
+            <mat-spinner color="warn" mode="indeterminate"></mat-spinner>
+          </div>
           <button id="government-login" type="submit">Save Person</button>
         </div>
       </form>

@@ -22,11 +22,12 @@ export class GetAllPersonsComponent implements OnInit{
     this.taxPayerService.getAllPersons().subscribe(
       (response:StandardResponse) =>{
         if(response.code === 200){
+          this.isLoading = false;
           this.personDetails = response.data as PersonDetail[];
         }else{
           console.log("error")
         }
-        this.isLoading = false;
+
       }
     );
   }

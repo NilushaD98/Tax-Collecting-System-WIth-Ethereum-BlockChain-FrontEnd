@@ -14,6 +14,7 @@ export class AddNewCompanyComponent implements OnInit{
 
   companyGroup: FormGroup = new FormGroup({});
   isLogging:boolean = false;
+  isLoading: boolean = false;
 
   constructor(
     private taxPayerService:TaxpayerService,
@@ -90,6 +91,7 @@ export class AddNewCompanyComponent implements OnInit{
 
 
   onSubmit() {
+    this.isLoading = true;
     const company = this.companyGroup.get('company') as FormGroup;
     const groupOfCompany = this.companyGroup.get('groupCompany') as FormGroup;
     const contactDetails = this.companyGroup.get('contactDetails') as FormGroup;
@@ -148,7 +150,9 @@ export class AddNewCompanyComponent implements OnInit{
 
     this.taxPayerService.addNewTaxPayerCompany(requestAddNewTaxpayerCompanyDTO).subscribe(
       (response:StandardResponse)=>{
+
         if(response.code === 201){
+          this.isLoading = false;
           alert(`Company saved : ${response.data}`);
           this.companyGroup.reset();
         }else {

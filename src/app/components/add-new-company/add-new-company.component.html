@@ -1,6 +1,7 @@
 <div *ngIf="isLogging" class="main-content page-m" xmlns="http://www.w3.org/1999/html">
   <div class="section-content section-content-p30">
     <div class="container-fluid">
+
       <form [formGroup]="companyGroup" (ngSubmit)="onSubmit()" >
         <!--        company form group-->
         <div formGroupName = "company" class="form-area">
@@ -185,7 +186,11 @@
             </div>
           </div>
         </div>
+
         <div>
+          <div *ngIf="isLoading" class="loading-spinner">
+            <mat-spinner color="warn" mode="indeterminate"></mat-spinner>
+          </div>
           <button id="government-login" type="submit">Save Company</button>
         </div>
       </form>

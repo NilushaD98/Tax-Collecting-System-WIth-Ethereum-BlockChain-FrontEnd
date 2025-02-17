@@ -11,6 +11,7 @@ import {RequestCreditCompanyPaymentDTO} from "../../common/request-credit-compan
 })
 export class AddNewCompanyPaymentComponent implements OnInit{
 
+  isLoading: boolean = false;
   companyPaymentGroup: FormGroup = new FormGroup({});
   constructor(
     private taxPayingService:TaxPayingService,
@@ -32,6 +33,7 @@ export class AddNewCompanyPaymentComponent implements OnInit{
     });
   }
   onSubmit() {
+    this.isLoading = true;
     const paymentDetails = this.companyPaymentGroup as FormGroup;
     const requestCompanyPayment = new RequestCreditCompanyPaymentDTO(
       paymentDetails.value.taxPayerRegistrationNumber,
@@ -47,8 +49,10 @@ export class AddNewCompanyPaymentComponent implements OnInit{
 
     this.taxPayingService.addCompanyPayment(requestCompanyPayment).subscribe(
       (response:StandardResponse) =>{
+
         if(response.code === 201){
-          alert(`Payment Saved .\n Payment Receipt: \n ${response.data}`)
+          this.isLoading = false;
+          alert(`Payment Saved .`)
           this.companyPaymentGroup.reset();
         }else {
           console.log("unsuccessful")

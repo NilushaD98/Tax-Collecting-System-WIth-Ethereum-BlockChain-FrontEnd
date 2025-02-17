@@ -3,6 +3,7 @@ import {TaxPayingService} from "../../services/tax-paying.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {RequestCreditPersonPaymentDTO} from "../../common/request-credit-person-payment-dto";
 import {StandardResponse} from "../../common/standard-response";
+import {PersonPaymentDTO} from "../../common/PersonPaymentDTO";
 
 @Component({
   selector: 'app-add-new-person-payment',
@@ -10,6 +11,7 @@ import {StandardResponse} from "../../common/standard-response";
   styleUrls: ['./add-new-person-payment.component.css']
 })
 export class AddNewPersonPaymentComponent implements OnInit{
+  isLoading: boolean = false;
 
   personPaymentGroup: FormGroup = new FormGroup({});
   constructor(
@@ -32,6 +34,7 @@ export class AddNewPersonPaymentComponent implements OnInit{
     });
   }
   onSubmit() {
+    this.isLoading= true;
     const paymentDetails = this.personPaymentGroup as FormGroup;
     const requestPersonPayment = new RequestCreditPersonPaymentDTO(
       paymentDetails.value.taxPayerRegistrationNumber,
@@ -47,7 +50,8 @@ export class AddNewPersonPaymentComponent implements OnInit{
     this.taxPayingService.addPersonPayment(requestPersonPayment).subscribe(
       (response:StandardResponse) =>{
         if(response.code === 201){
-          alert(`Payment Saved .\n Payment Receipt: \n ${response.data}`)
+          this.isLoading = false;
+          alert(`Payment Saved .`)
           this.personPaymentGroup.reset();
         }else {
           console.log("unsuccessful")
